@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "dotnet restore",
+            "command": "dotnet",
+            "args": [
+                "restore"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "taskName": "dotnet build",
+            "command": "dotnet",
+            "args": [
+                "build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "taskName": "dotnet watch run",
+            "options": {
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            },
+            "command": "dotnet",
+            "args": [
+                "watch",
+                "run"
+            ],
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "taskName": "vsc up",
+            "command": "vsc",
+            "args": [
+                "up",
+                "--import",
+                "stephpr/vsdbg:15.1.10502.1@vsdbg:vsdbg",
+                "sleep",
+                "infinity"
+            ],
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "taskName": "vsc service exec dotnet build",
+            "command": "vsc",
+            "args": [
+                "service",
+                "exec",
+                "dotnet",
+                "build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "taskName": "vsc service exec dotnet watch run",
+            "command": "vsc",
+            "args": [
+                "service",
+                "exec",
+                "dotnet",
+                "watch",
+                "run"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core launch",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "dotnet build",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/Debug/netcoreapp1.1/my-dotnet-app.dll",
+            "args": []
+        },
+        {
+            "name": ".NET Core launch (VSC)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "vsc service exec dotnet build",
+            "pipeTransport": {
+                "pipeCwd": "${workspaceRoot}",
+                "pipeProgram": "vsc",
+                "pipeArgs": [
+                    "service",
+                    "exec",
+                    "--no-tty"
+                ],
+                "quoteArgs": false,
+                "debuggerPath": "/vsdbg/vsdbg"
+            },
+            "cwd": "/src",
+            "program": "/src/bin/Debug/netcoreapp1.1/my-dotnet-app.dll",
+            "sourceFileMap": {
+                "/src": "${workspaceRoot}"
+            }
+        }
+    ]
+}
