@@ -6,10 +6,6 @@ COPY *.csproj ./
 RUN dotnet restore
 COPY . .
 
-FROM develop AS debug
-RUN dotnet build
-CMD ["dotnet", "watch", "run"]
-
 FROM develop AS publish
 RUN dotnet publish -c Release -o /app
 
