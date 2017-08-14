@@ -1,0 +1,3 @@
+#!/bin/bash
+# A hack due to issues with Git Bash
+vsc "$@"

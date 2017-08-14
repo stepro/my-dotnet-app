@@ -35,6 +35,9 @@
         {
             "taskName": "vsc up",
             "command": "vsc",
+            "windows": {
+                "command": "vsc.cmd"
+            },
             "args": [
                 "up",
                 "--import",
@@ -48,6 +51,9 @@
         {
             "taskName": "vsc service exec dotnet build",
             "command": "vsc",
+            "windows": {
+                "command": "vsc.cmd"
+            },
             "args": [
                 "service",
                 "exec",
@@ -59,6 +65,9 @@
         {
             "taskName": "vsc service exec dotnet watch run",
             "command": "vsc",
+            "windows": {
+                "command": "vsc.cmd"
+            },
             "args": [
                 "service",
                 "exec",

@@ -21,13 +21,16 @@
             "pipeTransport": {
                 "pipeCwd": "${workspaceRoot}",
                 "pipeProgram": "vsc",
+                "windows": {
+                    "pipeProgram": "vsc.cmd"
+                },
                 "pipeArgs": [
                     "service",
                     "exec",
                     "--no-tty"
                 ],
                 "quoteArgs": false,
-                "debuggerPath": "/vsdbg/vsdbg"
+                "debuggerPath": "../vsdbg/vsdbg"
             },
             "cwd": "/src",
             "program": "/src/bin/Debug/netcoreapp1.1/my-dotnet-app.dll",
