@@ -39,11 +39,9 @@
                 "command": "vsc.cmd"
             },
             "args": [
-                "up",
-                "--import",
-                "stephpr/vsdbg:15.1.10502.1@vsdbg:vsdbg",
-                "sleep",
-                "infinity"
+                "-e",
+                ".env.debug",
+                "up"
             ],
             "isBackground": true,
             "problemMatcher": []
