@@ -1,0 +1,28 @@
+name: my-dotnet-app
+configurations:
+  develop:
+    build:
+      target: develop
+    env:
+      ASPNETCORE_ENVIRONMENT: Development
+    command: ["dotnet", "watch", "run"]
+    watch:
+      *.*proj:
+        action: restart
+  develop.vscode:
+    imports:
+      vsdbg: stephpr/vsdbg:15.1.10502.1@vsdbg:vsdbg
+    command: ["sleep", "infinity"]
+    tasks:
+      build:
+        command: ["dotnet", "build"]
+      run:
+        command: ["dotnet, "watch", "run"]
+      debug:
+        dependsOn: ["build"]
+        tty: false
+    watch:
+      *.cs:
+        action: reexec
+  production:
+    sync: false
