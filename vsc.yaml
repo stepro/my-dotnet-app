@@ -1,5 +1,7 @@
-name: my-dotnet-app
-configurations:
+metadata:
+  name: my-dotnet-app
+  language: csharp
+config:
   develop:
     build:
       target: develop
@@ -7,7 +9,7 @@ configurations:
       ASPNETCORE_ENVIRONMENT: Development
     command: ["dotnet", "watch", "run"]
     watch:
-      *.*proj:
+      "*.*proj":
         action: restart
   develop.vscode:
     imports:
@@ -17,12 +19,12 @@ configurations:
       build:
         command: ["dotnet", "build"]
       run:
-        command: ["dotnet, "watch", "run"]
+        command: ["dotnet", "watch", "run"]
       debug:
         dependsOn: ["build"]
         tty: false
     watch:
-      *.cs:
+      "*.cs":
         action: reexec
   production:
     sync: false
