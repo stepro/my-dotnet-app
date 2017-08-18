@@ -1,19 +1,20 @@
-version: 1.0.0
+docVersion: 1.0.0
 kind: service
-metadata:
-  name: my-dotnet-app
-  version: 1.0.0
-  language: csharp
-  platform: dotnetcore
-spec:
+name: my-dotnet-app
+version: 0.1.0
+language: csharp
+labels:
+  vsc.io/dotnet-framework: netcoreapp
+properties:
   public: true
-config:
+configurations:
   develop:
     build:
       target: develop
     env:
       ASPNETCORE_ENVIRONMENT: Development
     command: ["dotnet", "watch", "run"]
+  develop.cli:
     watch:
       "*.*proj":
         action: restart
@@ -22,15 +23,21 @@ config:
       vsdbg: stephpr/vsdbg:15.1.10502.1@vsdbg:vsdbg
     command: ["sleep", "infinity"]
     tasks:
+      init:
+        command: ["dotnet", "restore"]
       build:
         command: ["dotnet", "build"]
-      run:
-        command: ["dotnet", "watch", "run"]
+      test:
+        command: ["dotnet", "test"]
       debug:
-        dependsOn: ["build"]
         tty: false
-    watch:
-      "*.cs":
-        action: reexec
+      run:
+        command: ["dotnet", "run"]
+        watch:
+          "*.*proj":
+            action: reexec
+            after: init
+          "*.cs":
+            action: reexec
   release:
     sync: false
