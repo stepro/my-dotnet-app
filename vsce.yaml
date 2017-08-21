@@ -14,6 +14,7 @@ configurations:
     env:
       ASPNETCORE_ENVIRONMENT: Development
     command: ["dotnet", "watch", "run"]
+    public: false
   develop.cli:
     watch:
       "*.*proj":

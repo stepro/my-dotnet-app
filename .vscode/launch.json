@@ -14,15 +14,15 @@
             "args": []
         },
         {
-            "name": ".NET Core launch (VSC)",
+            "name": ".NET Core launch (VSCE)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "vsc service exec dotnet build",
+            "preLaunchTask": "vsce service exec dotnet build",
             "pipeTransport": {
                 "pipeCwd": "${workspaceRoot}",
-                "pipeProgram": "vsc",
+                "pipeProgram": "vsce",
                 "windows": {
-                    "pipeProgram": "vsc.cmd"
+                    "pipeProgram": "vsce.cmd"
                 },
                 "pipeArgs": [
                     "service",
