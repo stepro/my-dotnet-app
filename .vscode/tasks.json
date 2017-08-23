@@ -47,30 +47,33 @@
             "problemMatcher": []
         },
         {
-            "taskName": "vsce service exec dotnet build",
+            "taskName": "vsce service exec -t build",
             "command": "vsce",
             "windows": {
                 "command": "vsce.cmd"
             },
             "args": [
+                "-c", 
+                "develop.vscode",
                 "service",
                 "exec",
-                "dotnet",
+                "-t",
                 "build"
             ],
             "problemMatcher": []
         },
         {
-            "taskName": "vsce service exec dotnet watch run",
+            "taskName": "vsce service exec -t run",
             "command": "vsce",
             "windows": {
                 "command": "vsce.cmd"
             },
             "args": [
+                "-c",
+                "develop.vscode",
                 "service",
                 "exec",
-                "dotnet",
-                "watch",
+                "-t",
                 "run"
             ],
             "problemMatcher": []

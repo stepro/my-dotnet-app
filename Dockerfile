@@ -6,8 +6,8 @@ RUN dotnet restore
 COPY . .
 
 FROM develop AS publish
-ARG DOTNET_BUILD_CONFIGURATION=Release
-RUN dotnet publish -c $DOTNET_BUILD_CONFIGURATION -o /app
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish -c $BUILD_CONFIGURATION -o /app
 
 FROM microsoft/aspnetcore:1 AS release
 WORKDIR /app

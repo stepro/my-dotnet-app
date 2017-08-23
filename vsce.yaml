@@ -4,7 +4,7 @@ name: my-dotnet-app
 version: 0.1.0
 language: csharp
 labels:
-  vsc.io/dotnet-framework: netcoreapp
+  vsce.io/dotnet-framework: netcoreapp
 properties:
   public: true
 configurations:
@@ -15,7 +15,6 @@ configurations:
       ASPNETCORE_ENVIRONMENT: Development
     command: ["dotnet", "watch", "run"]
     public: false
-  develop.cli:
     watch:
       "*.*proj":
         action: restart
@@ -24,8 +23,6 @@ configurations:
       vsdbg: stephpr/vsdbg:15.1.10502.1@vsdbg:vsdbg
     command: ["sleep", "infinity"]
     tasks:
-      init:
-        command: ["dotnet", "restore"]
       build:
         command: ["dotnet", "build"]
       test:
@@ -33,12 +30,6 @@ configurations:
       debug:
         tty: false
       run:
-        command: ["dotnet", "run"]
-        watch:
-          "*.*proj":
-            action: reexec
-            after: init
-          "*.cs":
-            action: reexec
+        command: ["dotnet", "watch", "run"]
   release:
     sync: false
