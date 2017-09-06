@@ -17,7 +17,7 @@
             "name": ".NET Core launch (VSCE)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "vsce service exec -t build",
+            "preLaunchTask": "vsce: service exec -t build",
             "pipeTransport": {
                 "pipeCwd": "${workspaceRoot}",
                 "pipeProgram": "vsce",
@@ -26,7 +26,7 @@
                 },
                 "pipeArgs": [
                     "-c",
-                    "develop.vscode",
+                    "develop.workspace.vscode",
                     "service",
                     "exec",
                     "-t",

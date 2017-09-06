@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "dotnet restore",
+            "taskName": "dotnet: restore",
             "command": "dotnet",
             "args": [
                 "restore"
@@ -10,7 +10,7 @@
             "problemMatcher": []
         },
         {
-            "taskName": "dotnet build",
+            "taskName": "dotnet: build",
             "command": "dotnet",
             "args": [
                 "build"
@@ -18,7 +18,7 @@
             "problemMatcher": []
         },
         {
-            "taskName": "dotnet watch run",
+            "taskName": "dotnet: watch run",
             "options": {
                 "env": {
                     "ASPNETCORE_ENVIRONMENT": "Development"
@@ -33,28 +33,28 @@
             "problemMatcher": []
         },
         {
-            "taskName": "vsce up",
+            "taskName": "vsce: up",
             "command": "vsce",
             "windows": {
                 "command": "vsce.cmd"
             },
             "args": [
                 "-c",
-                "develop.vscode",
+                "develop.workspace.vscode",
                 "up"
             ],
             "isBackground": true,
             "problemMatcher": []
         },
         {
-            "taskName": "vsce service exec -t build",
+            "taskName": "vsce: service exec -t build",
             "command": "vsce",
             "windows": {
                 "command": "vsce.cmd"
             },
             "args": [
                 "-c", 
-                "develop.vscode",
+                "develop.workspace.vscode",
                 "service",
                 "exec",
                 "-t",
@@ -63,14 +63,14 @@
             "problemMatcher": []
         },
         {
-            "taskName": "vsce service exec -t run",
+            "taskName": "vsce: service exec -t run",
             "command": "vsce",
             "windows": {
                 "command": "vsce.cmd"
             },
             "args": [
                 "-c",
-                "develop.vscode",
+                "develop.workspace.vscode",
                 "service",
                 "exec",
                 "-t",

@@ -4,7 +4,7 @@ name: my-dotnet-app
 version: 0.1.0
 language: csharp
 labels:
-  vsce.io/dotnet-framework: netcoreapp
+  vsce.io/dotnet-framework: netcoreapp1.1
 properties:
   public: true
 configurations:
@@ -17,8 +17,8 @@ configurations:
     public: false
     watch:
       "*.*proj":
-        action: restart
-  develop.vscode:
+        action: rebuild
+  develop.workspace: 
     imports:
       vsdbg: stephpr/vsdbg:15.1.10502.1@vsdbg:vsdbg
     command: ["sleep", "infinity"]
