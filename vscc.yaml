@@ -1,10 +1,5 @@
-docVersion: 1.0.0
-kind: service
 name: my-dotnet-app
 version: 0.1.0
-language: csharp
-labels:
-  vsce.io/dotnet-framework: netcoreapp1.1
 properties:
   public: true
 configurations:

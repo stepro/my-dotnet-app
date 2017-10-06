@@ -33,10 +33,10 @@
             "problemMatcher": []
         },
         {
-            "taskName": "vsce: up",
-            "command": "vsce",
+            "taskName": "vscc: up",
+            "command": "vscc",
             "windows": {
-                "command": "vsce.cmd"
+                "command": "vscc.cmd"
             },
             "args": [
                 "-c",
@@ -47,10 +47,10 @@
             "problemMatcher": []
         },
         {
-            "taskName": "vsce: service exec -t build",
-            "command": "vsce",
+            "taskName": "vscc: service exec -t build",
+            "command": "vscc",
             "windows": {
-                "command": "vsce.cmd"
+                "command": "vscc.cmd"
             },
             "args": [
                 "-c", 
@@ -63,10 +63,10 @@
             "problemMatcher": []
         },
         {
-            "taskName": "vsce: service exec -t run",
-            "command": "vsce",
+            "taskName": "vscc: service exec -t run",
+            "command": "vscc",
             "windows": {
-                "command": "vsce.cmd"
+                "command": "vscc.cmd"
             },
             "args": [
                 "-c",

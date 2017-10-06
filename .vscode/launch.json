@@ -5,7 +5,7 @@
             "name": ".NET Core launch",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "dotnet build",
+            "preLaunchTask": "dotnet: build",
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
@@ -14,15 +14,15 @@
             "args": []
         },
         {
-            "name": ".NET Core launch (VSCE)",
+            "name": ".NET Core launch (VSCC)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "vsce: service exec -t build",
+            "preLaunchTask": "vscc: service exec -t build",
             "pipeTransport": {
                 "pipeCwd": "${workspaceRoot}",
-                "pipeProgram": "vsce",
+                "pipeProgram": "vscc",
                 "windows": {
-                    "pipeProgram": "vsce.cmd"
+                    "pipeProgram": "vscc.cmd"
                 },
                 "pipeArgs": [
                     "-c",
